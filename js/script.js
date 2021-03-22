@@ -11,8 +11,17 @@ var app = new Vue({
   el: '#app',
   
   data: {
-    
+    todos: [
+      'Fare i compiti',
+      'Fare la spesa',
+      'Giocare a PES2021',
+      'Aggiustare smartphone'
+    ]
   },
 
-  
+  methods:{
+    deleteToDo(index){
+      this.todos.splice(index, 1);
+    }
+  }
 });

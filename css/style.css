@@ -25,3 +25,23 @@
     background-color: #f5f7f7;
     padding: 30px;
 }
+
+.todo-container ul li{
+    text-align: left;
+    list-style: none;
+}
+
+.todo{
+    border-bottom: 1px solid grey;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.todo:hover{
+    background-color: white;
+}
+
+.todo i{
+    padding-left: 20px;
+    float: right;
+}
