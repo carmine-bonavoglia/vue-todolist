@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato';
+}
+.container {
+    margin: 0 auto;
+    width: 70%;
+    height: 100vh;
+}
+
+.logo{
+    margin: 20px 0;
+    text-align: center;
+}
+
+.logo img{
+    width: 300px;
+}
+
+.todo-container{
+    margin: 40px;
+    border-radius: 10px;
+    background-color: #f5f7f7;
+    padding: 30px;
+}
