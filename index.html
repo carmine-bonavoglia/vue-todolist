@@ -14,33 +14,32 @@
         <div id="app" class="container">
             <div class="logo">
                 <img src="https://www.boolean.careers/images/misc/logo.png" alt="Boolean Logo">
+            </div>
 
-                <div class="new-todo">
-                    <input type="text" @keyup.enter="addToDo" v-model="newToDo" placeholder="Inserisci un dato">
-                    <button @click="addToDo">Inserisci</button>
-                </div>
+            <div class="new-todo">
+                <input type="text" @keyup.enter="addToDo" v-model="newToDo" placeholder="Inserisci un dato">
+                <button @click="addToDo" title="Inserisci elemento">Inserisci</button>
+            </div>
+            
+            <div class="todo-container">
+                <ul v-if="todos.length > 0">
+                    <li class="todo" v-for="(todo, index) in todos">{{todo}} 
+                        <i class="fas fa-times" @click="deleteToDo(index)" title="Elimina elemento"></i>
+                    </li>
+                </ul>
+                <h3 v-else>Non ci sono elementi nella lista</h3>
+            </div>
 
-                <div class="todo-container">
-                    <ul v-if="todos.length > 0">
-                        <li class="todo" v-for="(todo, index) in todos">{{todo}} 
-                            <i class="fas fa-times" @click="deleteToDo(index)"></i>
-                        </li>
-                    </ul>
-                    <h3 v-else>Non ci sono elementi nella lista</h3>
-
-                </div>
-
-                <h3>Lista elementi eliminati<i class="fas fa-trash" @click="deleteAll()"></i></h3>
-                
-                <div class="todo-container">
-                    <ul v-if="todoDeleted.length > 0">
-                        <li class="todo" v-for="(todo, index) in todoDeleted">{{todo}}
-                            <i class="fas fa-times" @click="deleteSingle(index)"></i>
-                            <i class="fas fa-window-restore" @click="restoreToDo(index)"></i>
-                        </li>
-                    </ul>
-                    <h3 v-else>Non ci sono elementi nella lista</h3>
-                </div>
+            <h3>Lista elementi eliminati<i class="fas fa-trash" @click="deleteAll()" title="Elimina definitivamente tutti gli elementi"></i></h3>
+            
+            <div class="todo-container">
+                <ul v-if="todoDeleted.length > 0">
+                    <li class="todo" v-for="(todo, index) in todoDeleted">{{todo}}
+                        <i class="fas fa-times" @click="deleteSingle(index)" title="Elimina definitivamente questo elemento"></i>
+                        <i class="fas fa-window-restore" @click="restoreToDo(index)" title="Ripristina elemento"></i>
+                    </li>
+                </ul>
+                <h3 v-else>Non ci sono elementi nella lista</h3>
             </div>
         </div>
 
