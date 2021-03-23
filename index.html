@@ -27,9 +27,14 @@
                     <h3 v-else>Non ci sono elementi nella lista</h3>
                 </div>
 
-                <h3>Lista elementi eliminati</h3>
+                <h3>Lista elementi eliminati</h3> 
                 <div class="todo-container">
-                
+                    <ul>
+                        <li class="todo" v-for="(todo, index) in todoDeleted">{{todo}}
+                            <i class="fas fa-times"></i>
+                            <i class="fas fa-window-restore" @click="restoreToDo(index)"></i>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

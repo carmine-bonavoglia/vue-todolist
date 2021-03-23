@@ -16,12 +16,19 @@ var app = new Vue({
       'Fare la spesa',
       'Giocare a PES2021',
       'Aggiustare smartphone'
-    ]
+    ],
+    todoDeleted: [],
   },
 
   methods:{
     deleteToDo(index){
+      this.todoDeleted.push(this.todos[index]);
       this.todos.splice(index, 1);
+    },
+
+    restoreToDo(index){
+      this.todos.push(this.todoDeleted[index]);
+      this.todoDeleted.splice(index, 1);
     }
   }
 });
