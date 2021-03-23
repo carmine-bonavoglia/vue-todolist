@@ -13,10 +13,11 @@ var app = new Vue({
   data: {
     newToDo: '',
     todos: [
-      'Fare i compiti',
-      'Fare la spesa',
-      'Lavare i piatti',
-      'Rifare i letti'
+      'Alzarsi al mattino con una nuova illusione',
+      'Prendere il 109 per la rivoluzione',
+      'Salire in teleferica, su un grattacielo, e farsi un uovo',
+      'Cercare il rock and roll nei bar e nei metrò',
+      'Cercare una bandiera diversa, senza sangue e sempre tersa'
     ],
     todoDeleted: [],
   },
