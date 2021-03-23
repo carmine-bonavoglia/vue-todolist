@@ -11,16 +11,27 @@ var app = new Vue({
   el: '#app',
   
   data: {
+    newToDo: '',
     todos: [
       'Fare i compiti',
       'Fare la spesa',
-      'Giocare a PES2021',
-      'Aggiustare smartphone'
+      'Lavare i piatti',
+      'Rifare i letti'
     ],
     todoDeleted: [],
   },
 
   methods:{
+
+    addToDo(){
+      if(this.newToDo.length < 4){
+        alert('La lunghezza deve essere maggiore di 4 caratteri!');
+      } else {
+        this.todos.push(this.newToDo);
+        this.newToDo = '';
+      }
+    },
+
     deleteToDo(index){
       this.todoDeleted.push(this.todos[index]);
       this.todos.splice(index, 1);
@@ -29,6 +40,14 @@ var app = new Vue({
     restoreToDo(index){
       this.todos.push(this.todoDeleted[index]);
       this.todoDeleted.splice(index, 1);
+    },
+
+    deleteSingle(index){
+      this.todoDeleted.splice(index, 1);
+    },
+    
+    deleteAll(){
+      this.todoDeleted = [];
     }
   }
 });

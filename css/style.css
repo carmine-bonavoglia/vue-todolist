@@ -1,3 +1,5 @@
+/* REGOLE GENERALI */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +11,9 @@
     width: 70%;
     height: 100vh;
 }
+/* /REGOLE GENERALI */
+
+/* LOGO */
 
 .logo{
     margin: 20px 0;
@@ -19,6 +24,37 @@
     width: 300px;
 }
 
+/* /LOGO */
+
+/* SEZIONE INPUT */
+.new-todo{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.new-todo input{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border-width: 1px;
+    min-width: 300px;
+    margin-right: 10px;
+}
+
+.new-todo input:focus{
+    outline: 0;
+}
+
+.new-todo button{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border-width: 1px;
+    cursor: pointer;
+}
+
+/* /SEZIONE INPUT */
+
+
+/* CORPO PRINCIPALE */
 .todo-container{
     margin: 40px;
     border-radius: 10px;
@@ -45,3 +81,9 @@
     padding-left: 20px;
     float: right;
 }
+
+h3 i{
+    margin-left: 20px;
+}
+
+/* /CORPO PRINCIPALE */

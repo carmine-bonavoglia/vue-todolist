@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <link rel="shortcut icon" href="https://lh3.googleusercontent.com/68vINaZAZO2_3EKjgcxM9i845zBFjIIXE0TV_a7AM-BHVnrq1dTfn-X6TC2NHuQTHw=w300" type="image/x-icon">
         <title>ToDo List Vue</title>
     </head>
     <body>
@@ -15,7 +16,8 @@
                 <img src="https://www.boolean.careers/images/misc/logo.png" alt="Boolean Logo">
 
                 <div class="new-todo">
-
+                    <input type="text" @keyup.enter="addToDo" v-model="newToDo" placeholder="Inserisci un dato">
+                    <button @click="addToDo">Inserisci</button>
                 </div>
 
                 <div class="todo-container">
@@ -25,16 +27,19 @@
                         </li>
                     </ul>
                     <h3 v-else>Non ci sono elementi nella lista</h3>
+
                 </div>
 
-                <h3>Lista elementi eliminati</h3> 
+                <h3>Lista elementi eliminati<i class="fas fa-trash" @click="deleteAll()"></i></h3>
+                
                 <div class="todo-container">
-                    <ul>
+                    <ul v-if="todoDeleted.length > 0">
                         <li class="todo" v-for="(todo, index) in todoDeleted">{{todo}}
-                            <i class="fas fa-times"></i>
+                            <i class="fas fa-times" @click="deleteSingle(index)"></i>
                             <i class="fas fa-window-restore" @click="restoreToDo(index)"></i>
                         </li>
                     </ul>
+                    <h3 v-else>Non ci sono elementi nella lista</h3>
                 </div>
             </div>
         </div>
